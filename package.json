@@ -1,0 +1,20 @@
+{
+  "name": "teamCreate",
+  "version": "1.0.0",
+  "description": "Command-line application to create a webpage to display members of a team and their basic information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maggiemaywilder/teamProfileCreator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maggiemaywilder/teamProfileCreator/issues"
+  },
+  "homepage": "https://github.com/maggiemaywilder/teamProfileCreator#readme"
+}
