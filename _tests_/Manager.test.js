@@ -8,4 +8,4 @@ describe('Manager', () => {
     describe('getRole', () => {
         
     })
-}
+})

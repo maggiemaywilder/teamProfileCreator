@@ -12,4 +12,4 @@ describe('Intern', () => {
     describe('getRole', () => {
         
     })
-}
+})

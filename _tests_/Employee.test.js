@@ -1,7 +1,10 @@
-const employee = require('../lib/employee');
+const Employee = require('../lib/employee');
 
 describe('Employee', () => {
+    const sue = new Employee('Sue', 42, 'sue@sue.com');
     describe('Initialize', () => {
+        
+        // this is the expect plain english sue=this name etc then if sue===this.name return true
         // tests for constructor, return string (or number), etc
     })
 
@@ -20,4 +23,4 @@ describe('Employee', () => {
     describe('getRole', () => {
         
     })
-}
+});
