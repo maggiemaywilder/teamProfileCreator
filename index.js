@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const Employee = require('./lib/employee');
-// const generatePage = require('./dist/generatePage.js');
+const createPage = require('./src/generatePage.js');
 
 const team = [];
 var member;
@@ -22,7 +22,6 @@ var member;
        value: `What is your intern's school?`}
     ];
     const finalQ = lastQ.find(({key}) => key === type);
-    console.log(finalQ.value);
     inquirer.prompt([
       {
         type: 'input',
@@ -47,7 +46,6 @@ var member;
     ])
     .then ((answers) => {
       member.push(answers);
-      console.log(member);
       team.push(member);
       next();
     })
@@ -77,7 +75,7 @@ var member;
     .then ((answer) => {
       newP = answer.memberType;
       if(newP === 'none') {
-        console.log(team)
+        createPage(team);
       } else {
         newMember(newP);
       }
