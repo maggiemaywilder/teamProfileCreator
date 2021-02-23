@@ -5,7 +5,6 @@ const Intern = require('../lib/intern');
 var teamObjs = [];
 
 function constructors(team) {
-    console.log(team);
     const managersObjs = [];
     const engineersObjs = [];
     const internsObjs = [];
@@ -31,15 +30,15 @@ function constructors(team) {
         internsObjs.push(student);
     });
     teamObjs = [...managersObjs, ...engineersObjs, ...internsObjs];
-    makeCards(teamObjs);
+    return makeCards(teamObjs);
     }
     
 function makeCards(objArray) {
+    let teamCards = [];
     objArray.forEach(function(employee){
         switch(employee.getRole()) {
-            case Manager:
-                const managerCard = (employee) => 
-`<div class="card">
+            case 'Manager':
+                teamCards.push(`<div class="card">
     <div class="card-heading bg-success">
         <h3>${employee.name}</h3>
         <h4>${employee.getRole()}</h4>
@@ -51,11 +50,10 @@ function makeCards(objArray) {
             <li>Office number: ${employee.officeNumber}</li>
         </ul>
     </div>
-</div>`;
+</div>`);
                 break;
-            case Engineer:
-                const engineerCard = (employee) => 
-`<div class="card">
+            case 'Engineer':
+                teamCards.push(`<div class="card">
     <div class="card-heading bg-primary">
         <h3>${employee.name}</h3>
         <h4>${employee.getRole()}</h4>
@@ -67,11 +65,10 @@ function makeCards(objArray) {
             <li>GitHub: <a href="https://github.com/${employee.github}">${employee.github}</a></li>
         </ul>
     </div>
-</div>`;
+</div>`);
                 break;
-            case Intern:
-                const internCard = (employee) => 
-`<div class="card">
+            case 'Intern':
+                teamCards.push(`<div class="card">
     <div class="card-heading bg-warning">
         <h3>${employee.name}</h3>
         <h4>${employee.getRole()}</h4>
@@ -83,15 +80,13 @@ function makeCards(objArray) {
             <li>School: ${employee.school}</li>
         </ul>
     </div>
-</div>`;
+</div>`);
                 break;
         }
     });
+    return teamCards.join("");
 };
 
-    // console.log(objArray, 'line 39');
-    // objArray.forEach(function(element) {
-    //     const card = ``
 
 function createPage(team) {
     return `
